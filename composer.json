@@ -1,0 +1,33 @@
+{
+  "name": "instride/pimcore-fixtures-bundle",
+  "type": "pimcore-bundle",
+  "description": "instride - Pimcore Fixtures Bundle",
+  "keywords": [
+    "Pimcore",
+    "Fixtures",
+    "Test"
+  ],
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "instride AG",
+      "email": "support@instride.ch",
+      "homepage": "https://instride.ch",
+      "role": "Web Development Agency"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "pimcore/pimcore": "^10.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Instride\\Bundle\\PimcoreFixturesBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.0-dev"
+    }
+  }
+}
