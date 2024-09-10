@@ -1,13 +1,14 @@
 {
   "name": "instride/pimcore-fixtures",
   "type": "pimcore-bundle",
+  "license": "GPL-3.0-or-later",
   "description": "instride - Pimcore Fixtures Bundle",
   "keywords": [
-    "Pimcore",
-    "Fixtures",
-    "Tests"
+    "pimcore",
+    "fixtures",
+    "tests",
+    "pimcore-bundle"
   ],
-  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "instride AG",
@@ -22,7 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Instride\\PimcoreFixturesBundle\\": "src/"
+      "Instride\\Bundle\\PimcoreFixturesBundle\\": "src/PimcoreFixturesBundle"
     }
   },
   "extra": {
@@ -31,7 +32,7 @@
     },
     "pimcore": {
       "bundles": [
-        "Instride\\PimcoreFixturesBundle\\PimcoreFixturesBundle"
+        "Instride\\Bundle\\PimcoreFixturesBundle\\PimcoreFixturesBundle"
       ]
     }
   }
