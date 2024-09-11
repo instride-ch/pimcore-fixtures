@@ -13,7 +13,7 @@ declare(strict_types=1);
  * @copyright 2024 instride AG (https://instride.ch)
  */
 
-namespace Instride\PimcoreFixturesBundle\Registry;
+namespace Instride\Bundle\PimcoreFixturesBundle\Registry;
 
 use Pimcore\Model\DataObject\Concrete;
 

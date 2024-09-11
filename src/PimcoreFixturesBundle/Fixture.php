@@ -1,6 +1,6 @@
 <?php
 
-namespace Instride\PimcoreFixturesBundle;
+namespace Instride\Bundle\PimcoreFixturesBundle;
 
 abstract class Fixture implements FixtureInterface
 {

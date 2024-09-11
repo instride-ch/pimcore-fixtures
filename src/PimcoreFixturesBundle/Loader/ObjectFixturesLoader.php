@@ -13,10 +13,10 @@ declare(strict_types=1);
  * @copyright 2024 instride AG (https://instride.ch)
  */
 
-namespace Instride\PimcoreFixturesBundle\Loader;
+namespace Instride\Bundle\PimcoreFixturesBundle\Loader;
 
-use Instride\PimcoreFixturesBundle\Fixture;
-use Instride\PimcoreFixturesBundle\FixtureGroupInterface;
+use Instride\Bundle\PimcoreFixturesBundle\Fixture;
+use Instride\Bundle\PimcoreFixturesBundle\FixtureGroupInterface;
 
 class ObjectFixturesLoader
 {

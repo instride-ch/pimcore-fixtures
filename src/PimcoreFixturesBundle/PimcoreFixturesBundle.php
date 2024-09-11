@@ -13,10 +13,10 @@ declare(strict_types=1);
  * @copyright 2024 instride AG (https://instride.ch)
  */
 
-namespace Instride\PimcoreFixturesBundle;
+namespace Instride\Bundle\PimcoreFixturesBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Instride\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesCompilerPass;
+use Instride\Bundle\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class PimcoreFixturesBundle extends Bundle

@@ -1,6 +1,7 @@
 <?php
 
-namespace Instride\PimcoreFixturesBundle;
+namespace Instride\Bundle\PimcoreFixturesBundle\Helper;
+
 use Pimcore\Model\DataObject\Folder;
 use Pimcore\Model\DataObject\Service;
 

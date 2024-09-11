@@ -13,7 +13,7 @@ declare(strict_types=1);
  * @copyright 2024 instride AG (https://instride.ch)
  */
 
-namespace Instride\PimcoreFixturesBundle\DependencyInjection\CompilerPass;
+namespace Instride\Bundle\PimcoreFixturesBundle\DependencyInjection\CompilerPass;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

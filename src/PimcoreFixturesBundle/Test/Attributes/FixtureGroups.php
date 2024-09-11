@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Instride\PimcoreFixturesBundle\Test\Attributes;
+namespace Instride\Bundle\PimcoreFixturesBundle\Test\Attributes;
 
 use Attribute;
 

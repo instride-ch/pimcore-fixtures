@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Instride\PimcoreFixturesBundle\Test;
+namespace Instride\Bundle\PimcoreFixturesBundle\Test;
 
-use Instride\PimcoreFixturesBundle\Executor\ObjectFixturesExecutor;
-use Instride\PimcoreFixturesBundle\Loader\ObjectFixturesLoader;
-use Instride\PimcoreFixturesBundle\Purger\FixturePurger;
-use Instride\PimcoreFixturesBundle\Test\Attributes\FixtureGroups;
+use Instride\Bundle\PimcoreFixturesBundle\Executor\ObjectFixturesExecutor;
+use Instride\Bundle\PimcoreFixturesBundle\Loader\ObjectFixturesLoader;
+use Instride\Bundle\PimcoreFixturesBundle\Purger\FixturePurger;
+use Instride\Bundle\PimcoreFixturesBundle\Test\Attributes\FixtureGroups;
 use ReflectionMethod;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

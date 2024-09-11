@@ -13,10 +13,10 @@ declare(strict_types=1);
  * @copyright 2024 instride AG (https://instride.ch)
  */
 
-namespace Instride\PimcoreFixturesBundle\Executor;
+namespace Instride\Bundle\PimcoreFixturesBundle\Executor;
 
-use Instride\PimcoreFixturesBundle\Fixture;
-use Instride\PimcoreFixturesBundle\Purger\FixturePurger;
+use Instride\Bundle\PimcoreFixturesBundle\Fixture;
+use Instride\Bundle\PimcoreFixturesBundle\Purger\FixturePurger;
 
 class ObjectFixturesExecutor
 {

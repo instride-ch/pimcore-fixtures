@@ -13,10 +13,10 @@ declare(strict_types=1);
  * @copyright 2024 instride AG (https://instride.ch)
  */
 
-namespace Instride\PimcoreFixturesBundle\DependencyInjection;
+namespace Instride\Bundle\PimcoreFixturesBundle\DependencyInjection;
 
-use Instride\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesCompilerPass;
-use Instride\PimcoreFixturesBundle\Fixture;
+use Instride\Bundle\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesCompilerPass;
+use Instride\Bundle\PimcoreFixturesBundle\Fixture;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;

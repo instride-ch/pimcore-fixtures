@@ -4,5 +4,5 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
     pimcore.fixtures.loader:
-        class: Instride\PimcoreFixturesBundle\Loader\ObjectFixturesLoader
+        class: Instride\Bundle\PimcoreFixturesBundle\Loader\ObjectFixturesLoader
         public: true
