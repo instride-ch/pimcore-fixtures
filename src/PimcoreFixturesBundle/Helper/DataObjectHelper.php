@@ -2,21 +2,20 @@
 
 namespace Instride\Bundle\PimcoreFixturesBundle\Helper;
 
-use Pimcore\Model\DataObject\Folder;
+use Pimcore\Model\DataObject\AbstractObject;
+use Pimcore\Model\DataObject\Concrete;
 use Pimcore\Model\DataObject\Service;
 
 class DataObjectHelper
 {
+    private static string $defaultPath = '/TestObjects';
 
-    private string $path;
-
-    public function __construct(string $path)
+    public static function setParent(Concrete $obj, AbstractObject|string $parent = null): void
     {
-        $this->path = $path;
-    }
+        if (!$parent) {
+            $parent = self::$defaultPath;
+        }
 
-    public function createObjectFolder(): Folder
-    {
-        return Service::createFolderByPath($this->path);
+        $obj->setParent($parent instanceof AbstractObject ? $parent : Service::createFolderByPath($parent));
     }
 }

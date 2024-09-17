@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-class FixturesCompilerPass implements CompilerPassInterface
+class FixturesRegisterCompilerPass implements CompilerPassInterface
 {
     public const FIXTURE_TAG = 'instride.pimcore.fixture';
 

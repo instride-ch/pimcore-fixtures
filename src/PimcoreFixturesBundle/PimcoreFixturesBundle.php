@@ -15,15 +15,21 @@ declare(strict_types=1);
 
 namespace Instride\Bundle\PimcoreFixturesBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Instride\Bundle\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesCompilerPass;
+use Instride\Bundle\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesConfigCompilerPass;
+use Instride\Bundle\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesRegisterCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class PimcoreFixturesBundle extends Bundle
 {
-    public function build(ContainerBuilder $container)
+    public function build(ContainerBuilder $container): void
     {
-        $container->addCompilerPass(new FixturesCompilerPass());
+        $container->addCompilerPass(new FixturesRegisterCompilerPass());
+        $container->addCompilerPass(new FixturesConfigCompilerPass());
+//        $container->addCompilerPass(new AutoTagFixtureCompilerPass());
+
+        $container->registerForAutoconfiguration(FixtureInterface::class)
+            ->addTag(FixturesRegisterCompilerPass::FIXTURE_TAG);
     }
 
     public function getPath(): string

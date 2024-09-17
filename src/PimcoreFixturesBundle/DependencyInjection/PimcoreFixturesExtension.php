@@ -15,26 +15,42 @@ declare(strict_types=1);
 
 namespace Instride\Bundle\PimcoreFixturesBundle\DependencyInjection;
 
-use Instride\Bundle\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesCompilerPass;
+use Instride\Bundle\PimcoreFixturesBundle\DependencyInjection\CompilerPass\FixturesRegisterCompilerPass;
 use Instride\Bundle\PimcoreFixturesBundle\Fixture;
+use Instride\Bundle\PimcoreFixturesBundle\FixtureInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\Yaml\Yaml;
 
 class PimcoreFixturesExtension extends Extension
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      *
-     * @return void
+     * @throws \Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader($container, new FileLocator(\dirname(__DIR__) . '/Resources/config'));
         $loader->load('services.yaml');
 
-        $container->registerForAutoconfiguration(Fixture::class)
-            ->addTag(FixturesCompilerPass::FIXTURE_TAG);
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $this->getFixturesConfig($config, $container);
+    }
+
+    private function getFixturesConfig(array $config, ContainerBuilder $container): void
+    {
+        $fixtureFiles = \glob($container->getParameter('kernel.project_dir') . '/config/fixtures/*.yaml');
+
+        foreach ($fixtureFiles as $file) {
+            $yamlConfig = Yaml::parseFile($file);
+            $config = \array_merge_recursive($config, $yamlConfig);
+        }
+
+        $container->setParameter('pimcore_fixtures', $config);
     }
 }

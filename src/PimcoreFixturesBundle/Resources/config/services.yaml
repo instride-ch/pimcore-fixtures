@@ -6,3 +6,20 @@ services:
     pimcore.fixtures.loader:
         class: Instride\Bundle\PimcoreFixturesBundle\Loader\ObjectFixturesLoader
         public: true
+
+    pimcore.fixtures.config.service:
+        class: Instride\Bundle\PimcoreFixturesBundle\Loader\FixtureConfigLoader
+        arguments:
+            - '%pimcore_fixtures%'
+
+    Instride\Bundle\PimcoreFixturesBundle\DataProvider\PimcoreDataGenerator:
+        arguments:
+            - '@pimcore.fixtures.config.service'
+
+    Instride\Bundle\PimcoreFixturesBundle\DataProvider\DataGeneratorInterface:
+        '@Instride\Bundle\PimcoreFixturesBundle\DataProvider\PimcoreDataGenerator'
+
+#    TODO: Remove?
+#    _instanceof:
+#        Instride\Bundle\PimcoreFixturesBundle\FixtureInterface:
+#            tags: [instride.pimcore.fixture]

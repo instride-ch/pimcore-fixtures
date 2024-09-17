@@ -26,7 +26,7 @@ class FixturePurger
      *
      * @param mixed $object The object to add.
      */
-    public static function addObject(Concrete $object): void
+    public static function addObject(Concrete|array $object): void
     {
         self::$objects[] = $object;
     }

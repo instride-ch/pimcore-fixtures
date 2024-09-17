@@ -75,3 +75,33 @@ Here, you will assign the Fixture to a group, which you can then use in your tes
    #[FixtureGroups(['group1', 'group2'])]
     public function testFixtureGroup1And2(): void {}
 ```
+
+### Testcase
+To use the fixtures in your test, you will need to extend the Instride\PimcoreFixturesBundle\Test\PimcoreTestCase class.
+By extending PimcoreTestCase, you will generate/purge your fixtures before/after every single testcase.
+```
+
+abstract class PimcoreTestCase extends KernelTestCase
+{
+    protected function setUp(): void
+    {
+        $this->setFixtureGroupsForMethod();
+        $executor = new ObjectFixturesExecutor();
+        $fixtures = $this->fixtureGroups
+            ? $this->fixturesLoader->getFixturesByGroup($this->fixtureGroups)
+            : $this->fixturesLoader->getSortedFixtures();
+        $executor->executeFixtures($fixtures);
+        self::bootKernel();
+    }
+
+    protected function tearDown(): void
+    {
+        try {
+            FixturePurger::purgeFixtures();
+        } catch (\Exception $e) {
+            throw new \Exception('Could not purge fixtures: ' . $e->getMessage());
+        }
+        parent::tearDown();
+    }
+}
+```

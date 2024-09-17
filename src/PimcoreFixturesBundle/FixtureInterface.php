@@ -16,7 +16,9 @@ declare(strict_types=1);
 namespace Instride\Bundle\PimcoreFixturesBundle;
 
 use Pimcore\Model\DataObject\Concrete;
+use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
+#[AutoconfigureTag('instride.pimcore.fixture')]
 interface FixtureInterface
 {
     public function load(): Concrete|array;
